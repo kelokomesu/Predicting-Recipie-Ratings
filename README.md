@@ -38,12 +38,19 @@ This model performed pretty poorly however. I believe there is a more useful way
 Added/Changed Features:
 
 * Minutes
+
 The minutes transformation was changed to a standard scaler transformation. This meant that outliers would still be weighted heavily but now in both directions. Recipes with average cooking time would keep some information and help with determining how to classify higher rated recipes more specifically than the binarizer.
+
 * Number of Steps
+
 This column had its transformation taken away and the orignal column values were used. I had originally squared these values to highlight outliers, however, the variance for minutes within each rating group still varried by quite a large margin, so keeping the column as is helped keep average cooking time together and outliers still stood out.
+
 * Calories
+
 The calorie scatterplot showed that many lower ratings had higher calorie counts. However, the cutoff of calories for good ratings was too harsh. Thus we log transformed the calorie data so that our cutoff included higher calories but still kept calories above a certain margin a lower rating.
+
 * Number of Ingredients
+
 When we checked the number of ingredients means by ratings groups, it was very similar to the minutes column. There seemed to be a sweet spot where outliers of a certain range had lower ratings overall. Thus we used a standard scaler transformation to lesson the impact of ingredient cuonts closer to the mean but still include the cut offs for outliers.
 
 
